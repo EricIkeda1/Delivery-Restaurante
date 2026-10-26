@@ -1,3 +1,4 @@
+import { databaseErrorMessage } from "./database-errors";
 import { getCurrentUser } from "@/lib/auth";
 export class HttpError extends Error {
   constructor(
@@ -26,7 +27,17 @@ export async function isOwner(userId: string) {
 export function fail(e: unknown) {
   if (e instanceof HttpError)
     return Response.json({ error: e.message }, { status: e.status });
-  console.error("EYI API failure", e instanceof Error ? e.name : "unknown");
+  const databaseMessage = databaseErrorMessage(e);
+  const code =
+    typeof e === "object" && e !== null && "code" in e
+      ? String(e.code)
+      : "unknown";
+  console.error("EYI API failure", {
+    name: e instanceof Error ? e.name : "unknown",
+    code,
+  });
+  if (databaseMessage)
+    return Response.json({ error: databaseMessage }, { status: 503 });
   return Response.json(
     { error: "Não foi possível acessar os dados. Tente novamente." },
     { status: 500 },

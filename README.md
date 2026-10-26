@@ -130,3 +130,20 @@ O desenvolvimento usa Webpack, assim como o build. Se quiser experimentar Turbop
 Se o navegador interno do VS Code mostrar `ERR_INVALID_HTTP_RESPONSE`, teste o mesmo endereço no navegador externo. Esse erro não informa sozinho a causa; confira se o terminal mostra um erro depois do acesso. Experimente também `http://127.0.0.1:3000/interfaces` para verificar a resolução de localhost.
 
 Após atualizar o projeto, pare o servidor com Ctrl+C, execute `npm ci` e inicie novamente. Não substitua seu `.env.local` pelas variáveis de exemplo.
+
+## Versão 1.1.2
+
+As animações de rolagem usam a Web Animations API e não alteram os atributos do HTML durante a hidratação. Continuam funcionando nos dois sentidos e respeitam a preferência por movimento reduzido.
+
+Para investigar um erro 500 do catálogo, execute `npm run db:check` na pasta do projeto. O comando lê `.env` e `.env.local`, verifica a conexão e as tabelas e mostra apenas o resultado, sem imprimir a conexão. Se os dois arquivos existirem, `.env.local` tem prioridade. Não coloque a conexão no código nem em arquivos versionados.
+
+Após substituir uma versão antiga, pare o servidor e remova apenas o cache gerado antes de iniciar novamente. No PowerShell:
+
+```powershell
+Remove-Item -Recurse -Force .next -ErrorAction SilentlyContinue
+npm ci
+npm run db:check
+npm run dev -- --hostname 127.0.0.1 --port 3000
+```
+
+Abra `http://127.0.0.1:3000`. O build e os testes não exigem conexão com banco; o catálogo normal usa o Neon configurado localmente. Atualize `NEXTAUTH_URL` para o mesmo endereço que usar no navegador ao configurar o login.

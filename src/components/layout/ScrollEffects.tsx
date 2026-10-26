@@ -25,58 +25,81 @@ const selector = [
   ".help-question",
   ".favorite-heading",
 ].join(",");
-/** Re-arm offscreen elements so the motion works when scrolling either way. */
+/** Animate without changing HTML attributes that React still needs to hydrate. */
 export function ScrollEffects() {
   useEffect(() => {
-    if (typeof IntersectionObserver === "undefined") return;
+    if (
+      typeof IntersectionObserver === "undefined" ||
+      !Element.prototype.animate
+    )
+      return;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const tracked = new Set<HTMLElement>();
+    const directions = new WeakMap<HTMLElement, number>();
+    const delays = new WeakMap<HTMLElement, number>();
+    const animations = new Map<HTMLElement, Animation>();
     let frame = 0;
-    let destroyed = false;
+
     const observer = new IntersectionObserver(
       (entries) => {
-        if (preference.matches) return;
         for (const entry of entries) {
           const element = entry.target as HTMLElement;
-          if (entry.isIntersecting) {
-            element.dataset.revealState = "visible";
-          } else {
-            element.dataset.revealFrom =
-              entry.boundingClientRect.top < 0 ? "above" : "below";
-            element.dataset.revealState = "hidden";
+          animations.get(element)?.cancel();
+          animations.delete(element);
+          if (!entry.isIntersecting) {
+            directions.set(
+              element,
+              entry.boundingClientRect.top < 0 ? -20 : 20,
+            );
+            continue;
           }
+          if (preference.matches) continue;
+          const animation = element.animate(
+            [
+              {
+                opacity: 0,
+                transform: `translateY(${directions.get(element) ?? 20}px)`,
+              },
+              { opacity: 1, transform: "translateY(0)" },
+            ],
+            {
+              duration: 550,
+              delay: delays.get(element) ?? 0,
+              easing: "cubic-bezier(0.22, 0.75, 0.2, 1)",
+              fill: "backwards",
+            },
+          );
+          animations.set(element, animation);
+          animation.onfinish = () => animations.delete(element);
         }
       },
-      { threshold: [0, 0.12], rootMargin: "-14px 0px -20px 0px" },
+      { threshold: 0, rootMargin: "-14px 0px -20px 0px" },
     );
+
     function scan() {
-      if (destroyed || preference.matches) return;
+      for (const element of tracked) {
+        if (element.isConnected) continue;
+        observer.unobserve(element);
+        animations.get(element)?.cancel();
+        animations.delete(element);
+        tracked.delete(element);
+      }
       document
         .querySelectorAll<HTMLElement>(selector)
         .forEach((element, index) => {
           if (tracked.has(element)) return;
           tracked.add(element);
-          const rect = element.getBoundingClientRect();
-          element.dataset.revealFrom = rect.top < 0 ? "above" : "below";
-          element.dataset.revealState = "hidden";
-          element.dataset.revealReady = "true";
-          element.style.setProperty(
-            "--reveal-delay",
-            Math.min(index % 3, 2) * 45 + "ms",
+          directions.set(
+            element,
+            element.getBoundingClientRect().top < 0 ? -20 : 20,
           );
+          delays.set(element, (index % 3) * 45);
           observer.observe(element);
         });
     }
-    function reset() {
-      observer.disconnect();
-      for (const element of tracked) {
-        delete element.dataset.revealReady;
-        delete element.dataset.revealState;
-        delete element.dataset.revealFrom;
-        element.style.removeProperty("--reveal-delay");
-      }
-      tracked.clear();
-      if (!preference.matches) scan();
+    function cancelMotion() {
+      for (const animation of animations.values()) animation.cancel();
+      animations.clear();
     }
     scan();
     const mutations = new MutationObserver(() => {
@@ -87,19 +110,13 @@ export function ScrollEffects() {
       });
     });
     mutations.observe(document.body, { childList: true, subtree: true });
-    preference.addEventListener("change", reset);
+    preference.addEventListener("change", cancelMotion);
     return () => {
-      destroyed = true;
       cancelAnimationFrame(frame);
       mutations.disconnect();
-      preference.removeEventListener("change", reset);
       observer.disconnect();
-      for (const element of tracked) {
-        delete element.dataset.revealReady;
-        delete element.dataset.revealState;
-        delete element.dataset.revealFrom;
-        element.style.removeProperty("--reveal-delay");
-      }
+      preference.removeEventListener("change", cancelMotion);
+      cancelMotion();
     };
   }, []);
   return null;
