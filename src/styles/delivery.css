@@ -1,0 +1,1926 @@
+/* Customer-facing design based on the supplied desktop and mobile reference. */
+.delivery-app {
+  background: #fdf8ef;
+  min-height: 100dvh;
+}
+.reference-header {
+  border: 0;
+  background: #fffcf7;
+  box-shadow: none;
+}
+.reference-header .header-inner {
+  min-height: 98px;
+  padding: 18px 36px;
+  gap: 28px;
+}
+.reference-header .brand img {
+  width: 47px;
+  height: 48px;
+  border-radius: 12px;
+}
+.reference-header .brand > span {
+  font-size: 29px;
+  letter-spacing: -1.6px;
+}
+.reference-header .brand small {
+  font-size: 10px;
+  letter-spacing: -0.1px;
+  margin-top: 4px;
+}
+.reference-header .delivery-address {
+  padding: 12px 18px;
+  border: 1px solid #eee7dc;
+  box-shadow: 0 3px 15px #ad93690b;
+  background: #fff;
+  border-radius: 40px;
+  gap: 10px;
+  min-height: 53px;
+  font-size: 10px;
+}
+.reference-header .delivery-address > svg:first-child {
+  color: #0754ff;
+  stroke: white;
+  stroke-width: 1.5;
+}
+.reference-header .delivery-address span {
+  color: #7992b1;
+}
+.reference-header .delivery-address b {
+  font-size: 12px;
+  margin-top: 1px;
+  color: #132743;
+}
+.reference-header .delivery-address > svg:last-child {
+  margin-left: 5px;
+}
+.reference-header .reference-search {
+  border: 1px solid #f0e9df;
+  background: #fff;
+  border-radius: 40px;
+  padding: 0 20px;
+  min-height: 53px;
+  gap: 12px;
+  color: #104db7;
+  max-width: none;
+  flex: 1;
+}
+.reference-header .reference-search input {
+  font-size: 12px;
+  color: #31547d;
+}
+.reference-header .reference-search input::placeholder {
+  color: #6c8caf;
+}
+.reference-header .reference-search .search-submit {
+  display: none;
+}
+.desktop-navigation {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+  font-size: 12px;
+  white-space: nowrap;
+  color: #45648c;
+}
+.desktop-navigation > a {
+  padding: 11px 0;
+  position: relative;
+}
+.desktop-navigation > a.active {
+  color: var(--blue);
+  font-weight: 650;
+}
+.desktop-navigation > a.active:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 2px;
+}
+.reference-header .cart-link {
+  position: relative;
+  gap: 0;
+  color: #092d72;
+  margin-left: 5px;
+  flex-shrink: 0;
+}
+.reference-header .cart-link span {
+  position: absolute;
+  top: -7px;
+  right: -8px;
+  background: #0754ff;
+  min-width: 19px;
+  height: 19px;
+  padding: 2px 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  border: 2px solid #fffcf7;
+}
+.header-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  background: #f8ebdf;
+  color: #4d190f;
+  flex-shrink: 0;
+}
+.mobile-menu-trigger {
+  display: none;
+}
+.delivery-app > .customer-main {
+  padding: 0 36px 38px;
+  width: 100%;
+  margin: 0;
+}
+.home-reference {
+  padding-top: 0;
+}
+.pizza-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #a40003;
+  color: #fff8ee;
+  min-height: 360px;
+  height: clamp(360px, 28vw, 500px);
+}
+.pizza-hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 50%;
+  z-index: -3;
+}
+.pizza-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #74000688 0%,
+    #a400031a 48%,
+    transparent 70%
+  );
+  z-index: -2;
+}
+.pizza-hero-copy {
+  position: relative;
+  padding: 40px 48px;
+  max-width: 67%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.pizza-hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 2.5px;
+}
+.pizza-hero-kicker i {
+  width: 98px;
+  height: 1px;
+  background: #e18e7b;
+  display: block;
+}
+.pizza-hero h1 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(48px, 4.7vw, 86px);
+  font-weight: 400;
+  letter-spacing: -2.8px;
+  line-height: 0.99;
+  margin: 20px 0 17px;
+}
+.pizza-hero h1 em {
+  font-style: normal;
+  color: #ffdd9b;
+}
+.pizza-hero p {
+  font-size: clamp(13px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: #fff5ed;
+  max-width: 600px;
+  letter-spacing: -0.2px;
+}
+.pizza-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+  min-height: 49px;
+  padding: 13px 26px;
+  background: #fffdf8;
+  color: #122032;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 750;
+  box-shadow: 0 3px 12px #3400000b;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.pizza-hero-cta:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+.food-categories {
+  display: flex;
+  gap: 12px;
+  padding: 20px 3px 22px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.food-categories::-webkit-scrollbar {
+  display: none;
+}
+.food-categories button {
+  flex: 1;
+  min-width: 85px;
+  min-height: 82px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: #f9f1e6;
+  border: 1px solid #f5ebdc;
+  border-radius: 25px;
+  padding: 10px 12px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.food-categories button > svg {
+  stroke-width: 1.6;
+}
+.food-category-emoji {
+  font-size: 31px;
+  line-height: 1.2;
+  display: block;
+}
+.food-categories b {
+  font-size: 11px;
+  font-weight: 550;
+  color: #122849;
+  white-space: nowrap;
+  letter-spacing: -0.3px;
+}
+.food-categories button.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+}
+.food-categories button.active b {
+  color: white;
+}
+.food-categories button:first-child {
+  flex-direction: row;
+  gap: 11px;
+  min-width: 126px;
+}
+.food-categories button:first-child b {
+  font-size: 13px;
+}
+.food-categories button:hover:not(.active) {
+  background: #f2e4cf;
+}
+.home-restaurants {
+  margin-top: 3px;
+}
+.home-restaurants-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 3px 13px;
+}
+.home-restaurants-heading h2 {
+  font-size: 25px;
+  letter-spacing: -1px;
+  color: #142033;
+}
+.home-restaurants-heading > a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: var(--blue);
+  white-space: nowrap;
+}
+.home-restaurant-grid {
+  gap: 23px;
+}
+.reference-restaurant-card {
+  border: 1px solid #f1eadf;
+  border-radius: 14px;
+  background: #fffefd;
+  box-shadow: 0 3px 12px #4c2f0d04;
+  overflow: hidden;
+}
+.reference-restaurant-card .restaurant-cover {
+  height: 155px;
+}
+.reference-restaurant-card .restaurant-cover:after {
+  background: linear-gradient(transparent 65%, #22190945);
+}
+.reference-restaurant-card .favorite {
+  width: 33px;
+  height: 33px;
+  background: #201b16a6;
+  color: #fff;
+  right: 10px;
+  top: 10px;
+}
+.reference-restaurant-card .favorite.selected {
+  color: #ffb2a6;
+}
+.reference-restaurant-card .restaurant-info {
+  padding: 0 15px 15px;
+  position: relative;
+  background: #fffefd;
+  border-radius: 14px 14px 0 0;
+  margin-top: -11px;
+  z-index: 2;
+}
+.restaurant-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 75px;
+}
+.restaurant-monogram {
+  width: 76px;
+  height: 76px;
+  border: 4px solid #fffefd;
+  border-radius: 15px;
+  background: #12110e;
+  color: #cba636;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+  margin-top: -23px;
+  box-shadow: 0 1px 4px #20190d10;
+}
+.restaurant-monogram > b {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  max-width: 65px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.restaurant-monogram > small {
+  font-size: 5px;
+  letter-spacing: 1px;
+}
+.restaurant-monogram.burger {
+  color: #f19c39;
+}
+.restaurant-monogram.sushi {
+  color: #fff7e8;
+}
+.reference-restaurant-card .restaurant-info h3 {
+  font-size: 17px;
+  letter-spacing: -0.65px;
+  color: #142139;
+  line-height: 1.3;
+}
+.reference-restaurant-card .rating {
+  font-size: 12px;
+  color: #3674bc;
+  margin-top: 7px;
+  font-weight: 450;
+}
+.reference-restaurant-card .rating > svg {
+  color: #ffb300;
+  width: 17px;
+  height: 17px;
+}
+.restaurant-card-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 2px;
+  flex-wrap: wrap;
+  color: #3468a6;
+  font-size: 10px;
+}
+.restaurant-tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.restaurant-tags > span {
+  padding: 5px 9px;
+  background: #f2f5f8;
+  border-radius: 9px;
+  font-size: 10px;
+  color: #4d77a8;
+  white-space: nowrap;
+}
+.delivery-detail {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  font-size: 10px;
+}
+.delivery-app > .footer {
+  margin: 0 36px;
+  border-top: 1px solid #eee3d3;
+  gap: 24px;
+  padding-top: 24px;
+}
+.delivery-app > .footer nav {
+  display: flex;
+  gap: 18px;
+  margin-left: auto;
+  font-size: 10px;
+  color: #547194;
+}
+.delivery-app > .footer > small {
+  margin-left: 0;
+}
+.mobile-drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+}
+.mobile-drawer-links > a {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px;
+  color: #23324b;
+  background: #faf3e7;
+  border-radius: 22px;
+  font-size: 13px;
+}
+.mobile-drawer-links > a > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e6edff;
+  color: var(--blue);
+  width: 43px;
+  height: 43px;
+  border-radius: 16px;
+}
+.mobile-drawer-links > a > svg:last-child {
+  margin-left: auto;
+  color: #8091ae;
+}
+@media (min-width: 1650px) {
+  .reference-header .header-inner {
+    min-height: 108px;
+    padding: 22px 44px;
+    gap: 40px;
+  }
+  .delivery-app > .customer-main {
+    padding: 0 44px 44px;
+  }
+  .desktop-navigation {
+    gap: 34px;
+    font-size: 14px;
+  }
+  .reference-header .reference-search {
+    max-width: 650px;
+  }
+  .reference-header .brand > span {
+    font-size: 32px;
+  }
+  .pizza-hero-copy {
+    padding: 45px 60px;
+  }
+  .pizza-hero-kicker {
+    font-size: 12px;
+  }
+  .pizza-hero-cta {
+    font-size: 16px;
+    min-height: 56px;
+    padding: 15px 31px;
+  }
+  .food-categories {
+    padding-top: 24px;
+    padding-bottom: 28px;
+    gap: 16px;
+  }
+  .food-categories button {
+    min-height: 94px;
+    border-radius: 28px;
+  }
+  .food-category-emoji {
+    font-size: 35px;
+  }
+  .food-categories b {
+    font-size: 12px;
+  }
+  .home-restaurants-heading h2 {
+    font-size: 28px;
+  }
+  .reference-restaurant-card .restaurant-cover {
+    height: 190px;
+  }
+  .restaurant-card-details {
+    font-size: 12px;
+  }
+  .delivery-detail,
+  .restaurant-tags > span {
+    font-size: 12px;
+  }
+  .reference-restaurant-card .restaurant-info h3 {
+    font-size: 19px;
+  }
+  .reference-restaurant-card .restaurant-info {
+    padding: 0 20px 17px;
+  }
+  .delivery-app > .footer {
+    margin: 0 44px;
+  }
+}
+@media (max-width: 1200px) {
+  .reference-header .header-inner {
+    padding: 17px 25px;
+    gap: 20px;
+    min-height: 88px;
+  }
+  .reference-header .brand img {
+    width: 41px;
+    height: 42px;
+  }
+  .reference-header .brand > span {
+    font-size: 26px;
+  }
+  .reference-header .brand small {
+    font-size: 8px;
+  }
+  .reference-header .delivery-address {
+    padding: 10px 14px;
+    min-height: 46px;
+    gap: 8px;
+  }
+  .reference-header .reference-search {
+    min-height: 46px;
+    padding: 0 15px;
+  }
+  .reference-header .reference-search input {
+    font-size: 11px;
+  }
+  .desktop-navigation {
+    gap: 20px;
+    font-size: 11px;
+  }
+  .delivery-app > .customer-main {
+    padding: 0 25px 35px;
+  }
+  .pizza-hero {
+    height: 340px;
+    min-height: 340px;
+    border-radius: 17px;
+  }
+  .pizza-hero-copy {
+    padding: 32px 36px;
+    max-width: 69%;
+  }
+  .pizza-hero h1 {
+    font-size: clamp(47px, 5.1vw, 64px);
+    margin: 15px 0;
+  }
+  .pizza-hero-kicker {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+  .pizza-hero-kicker i {
+    width: 75px;
+  }
+  .pizza-hero p {
+    font-size: 13px;
+  }
+  .pizza-hero-cta {
+    font-size: 13px;
+    min-height: 46px;
+    padding: 12px 23px;
+    gap: 22px;
+  }
+  .food-categories {
+    gap: 10px;
+  }
+  .food-categories button {
+    min-width: 75px;
+    min-height: 77px;
+    padding: 9px;
+  }
+  .food-categories b {
+    font-size: 10px;
+  }
+  .food-categories button:first-child {
+    min-width: 107px;
+  }
+  .food-categories button:first-child b {
+    font-size: 12px;
+  }
+  .food-category-emoji {
+    font-size: 28px;
+  }
+  .home-restaurants-heading h2 {
+    font-size: 22px;
+  }
+  .home-restaurants-heading > a {
+    font-size: 12px;
+  }
+  .home-restaurant-grid {
+    gap: 18px;
+  }
+  .reference-restaurant-card .restaurant-cover {
+    height: 130px;
+  }
+  .restaurant-monogram {
+    width: 67px;
+    height: 67px;
+    border-radius: 13px;
+  }
+  .restaurant-monogram > b {
+    font-size: 9px;
+    max-width: 56px;
+  }
+  .restaurant-monogram > svg {
+    width: 23px;
+    height: 23px;
+  }
+  .reference-restaurant-card .restaurant-info {
+    padding: 0 11px 12px;
+  }
+  .restaurant-identity {
+    gap: 9px;
+    min-height: 67px;
+  }
+  .reference-restaurant-card .restaurant-info h3 {
+    font-size: 14px;
+  }
+  .restaurant-card-details {
+    gap: 7px;
+  }
+  .restaurant-tags > span {
+    padding: 4px 7px;
+    font-size: 9px;
+  }
+  .delivery-detail {
+    font-size: 9px;
+    gap: 4px;
+  }
+  .delivery-detail > svg {
+    width: 11px;
+  }
+  .reference-restaurant-card .rating {
+    font-size: 11px;
+  }
+  .delivery-app > .footer {
+    margin: 0 25px;
+    gap: 18px;
+  }
+  .delivery-app > .footer > span {
+    display: none;
+  }
+}
+@media (max-width: 960px) and (min-width: 801px) {
+  .reference-header .header-inner {
+    gap: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .reference-header .delivery-address {
+    padding: 9px 12px;
+  }
+  .reference-header .delivery-address > svg:first-child {
+    width: 20px;
+  }
+  .desktop-navigation {
+    gap: 15px;
+    font-size: 10px;
+  }
+  .reference-header .reference-search input {
+    font-size: 10px;
+  }
+  .header-profile {
+    width: 34px;
+    height: 34px;
+  }
+  .reference-header .brand > span {
+    font-size: 23px;
+  }
+  .reference-header .brand img {
+    width: 37px;
+    height: 38px;
+  }
+  .reference-header .brand small {
+    font-size: 7px;
+  }
+  .restaurant-card-details {
+    column-gap: 5px;
+  }
+  .restaurant-tags > span {
+    padding: 4px 6px;
+    font-size: 8px;
+  }
+  .reference-restaurant-card .restaurant-info {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .delivery-detail {
+    font-size: 8px;
+  }
+  .food-categories {
+    gap: 8px;
+  }
+  .food-categories button {
+    min-width: 69px;
+  }
+  .food-categories button:first-child {
+    min-width: 97px;
+  }
+}
+@media (max-width: 800px) {
+  .reference-header .header-inner {
+    flex-wrap: nowrap;
+    min-height: 74px;
+    padding: 15px 19px;
+    gap: 14px;
+  }
+  .reference-header .mobile-menu-trigger {
+    display: inline-flex;
+    width: 23px;
+    height: 30px;
+    flex-shrink: 0;
+    color: #243348;
+  }
+  .reference-header .brand {
+    gap: 7px;
+  }
+  .reference-header .brand img {
+    width: 33px;
+    height: 34px;
+    border-radius: 8px;
+  }
+  .reference-header .brand > span {
+    font-size: 23px;
+    letter-spacing: -1.2px;
+  }
+  .reference-header .brand small {
+    font-size: 7px;
+    letter-spacing: -0.1px;
+    margin-top: 3px;
+  }
+  .reference-header .delivery-address {
+    margin-left: auto;
+    min-height: 0;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    gap: 4px;
+    font-size: 7px;
+  }
+  .reference-header .delivery-address > svg:first-child {
+    width: 18px;
+    height: 21px;
+  }
+  .reference-header .delivery-address b {
+    font-size: 10px;
+    margin-top: 1px;
+  }
+  .reference-header .delivery-address > svg:last-child {
+    width: 10px;
+    height: 10px;
+    margin-left: 1px;
+  }
+  .reference-header .reference-search,
+  .desktop-navigation {
+    display: none;
+  }
+  .reference-header .cart-link {
+    margin-left: 0;
+  }
+  .reference-header .cart-link > svg {
+    width: 23px;
+    height: 23px;
+  }
+  .reference-header .cart-link > span {
+    font-size: 8px;
+    min-width: 15px;
+    height: 15px;
+    top: -5px;
+    right: -6px;
+    border-width: 1px;
+  }
+  .header-profile {
+    width: 27px;
+    height: 27px;
+  }
+  .header-profile > svg {
+    width: 17px;
+    height: 17px;
+  }
+  .delivery-app > .customer-main {
+    padding: 0 19px 30px;
+  }
+  .pizza-hero {
+    height: 355px;
+    min-height: 355px;
+    border-radius: 17px;
+  }
+  .pizza-hero-copy {
+    padding: 25px 25px;
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+  .pizza-hero-kicker {
+    font-size: 8px;
+    letter-spacing: 1.7px;
+    gap: 13px;
+  }
+  .pizza-hero-kicker i {
+    width: 68px;
+  }
+  .pizza-hero h1 {
+    font-size: 44px;
+    line-height: 1.01;
+    letter-spacing: -1.4px;
+    margin: 15px 0 11px;
+  }
+  .pizza-hero p {
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 300px;
+  }
+  .pizza-hero-cta {
+    font-size: 12px;
+    padding: 11px 20px;
+    min-height: 40px;
+    gap: 18px;
+    margin-top: 16px;
+  }
+  .pizza-hero-cta > svg {
+    width: 17px;
+  }
+  .pizza-hero-photo {
+    object-fit: cover;
+    object-position: 78% 50%;
+    width: 170%;
+    max-width: none;
+    left: -60%;
+    top: 55px;
+    height: calc(100% - 55px);
+  }
+  .pizza-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      #a00003 0%,
+      #b00003f2 15%,
+      #a00003c9 42%,
+      #9a000028 74%,
+      transparent 100%
+    );
+  }
+  .food-categories {
+    margin-right: -19px;
+    padding: 14px 0 19px;
+    gap: 9px;
+    scroll-snap-type: x proximity;
+  }
+  .food-categories button {
+    min-width: 78px;
+    min-height: 80px;
+    border-radius: 23px;
+    gap: 7px;
+    flex: 0 0 78px;
+    padding: 10px 7px;
+    scroll-snap-align: start;
+  }
+  .food-categories button:first-child {
+    flex-direction: column;
+    min-width: 70px;
+    flex-basis: 70px;
+    gap: 7px;
+  }
+  .food-categories button:first-child > svg {
+    width: 26px;
+    height: 26px;
+  }
+  .food-categories button:first-child b {
+    font-size: 10px;
+  }
+  .food-categories b {
+    font-size: 10px;
+  }
+  .food-category-emoji {
+    font-size: 29px;
+  }
+  .home-restaurants-heading {
+    margin: 0 0 12px;
+    gap: 10px;
+  }
+  .home-restaurants-heading h2 {
+    font-size: 21px;
+    letter-spacing: -0.8px;
+  }
+  .home-restaurants-heading > a {
+    font-size: 11px;
+    gap: 5px;
+  }
+  .home-restaurants-heading > a > svg {
+    width: 14px;
+  }
+  .home-restaurant-grid {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-right: -19px;
+    padding: 0 19px 12px 0;
+  }
+  .home-restaurant-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .home-restaurant-grid > .restaurant-card {
+    flex: 0 0 80%;
+    max-width: 400px;
+    scroll-snap-align: start;
+  }
+  .reference-restaurant-card .restaurant-cover {
+    height: 124px;
+  }
+  .reference-restaurant-card .restaurant-info {
+    padding: 0 13px 12px;
+  }
+  .reference-restaurant-card .restaurant-info h3 {
+    font-size: 14px;
+  }
+  .reference-restaurant-card .rating {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+  .reference-restaurant-card .rating > svg {
+    width: 15px;
+    height: 15px;
+  }
+  .restaurant-identity {
+    gap: 10px;
+    min-height: 64px;
+  }
+  .restaurant-monogram {
+    width: 65px;
+    height: 65px;
+    margin-top: -22px;
+    border-width: 3px;
+  }
+  .restaurant-card-details {
+    gap: 7px;
+    margin-top: 3px;
+    flex-wrap: nowrap;
+  }
+  .restaurant-tags {
+    gap: 4px;
+  }
+  .restaurant-tags > span {
+    padding: 4px 6px;
+    border-radius: 7px;
+    font-size: 8px;
+  }
+  .delivery-detail {
+    font-size: 9px;
+    gap: 4px;
+  }
+  .delivery-detail > svg {
+    width: 10px;
+  }
+  .reference-restaurant-card .favorite {
+    width: 29px;
+    height: 29px;
+    right: 8px;
+    top: 8px;
+  }
+  .reference-restaurant-card .favorite > svg {
+    width: 22px;
+  }
+  .delivery-app > .footer {
+    margin: 0 19px;
+    padding: 24px 0 120px;
+    gap: 18px;
+  }
+  .delivery-app > .footer > .brand {
+    display: none;
+  }
+  .delivery-app > .footer > nav {
+    margin: 0;
+    font-size: 11px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .delivery-app > .footer > small {
+    font-size: 9px;
+  }
+  .bottom-nav {
+    inset: auto 15px 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 2px;
+    padding: 9px;
+    border-radius: 32px;
+    border: 1px solid #ece5db;
+    box-shadow:
+      0 8px 30px #442c1519,
+      0 2px 8px #442c1507;
+    min-height: 73px;
+    background: #fffdf9f7;
+    backdrop-filter: blur(18px);
+  }
+  .bottom-nav a {
+    flex: 1;
+    min-width: 0;
+    gap: 5px;
+    font-size: 9px;
+    color: #182a48;
+    min-height: 52px;
+    border-radius: 27px;
+    padding: 6px 5px;
+    justify-content: center;
+    transition:
+      background 0.2s,
+      color 0.2s;
+  }
+  .bottom-nav a > svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 1.8;
+  }
+  .bottom-nav a.active {
+    background: var(--blue);
+    color: #fff;
+    box-shadow: 0 3px 9px #0754ff25;
+  }
+  .bottom-nav a.active svg {
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    fill: currentColor;
+    stroke-width: 1.7;
+  }
+  .floating-cart {
+    bottom: 105px;
+  }
+  .preview-mode .bottom-nav {
+    bottom: 16px;
+  }
+  .home-reference .empty {
+    padding: 45px 18px;
+  }
+  .mobile-drawer-links {
+    padding: 18px;
+  }
+  .mobile-drawer-links > a {
+    border-radius: 22px;
+  }
+  .delivery-app .restaurant-banner {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 430px) {
+  .reference-header .header-inner {
+    padding: 13px 14px;
+    gap: 10px;
+    min-height: 65px;
+  }
+  .reference-header .brand img {
+    width: 29px;
+    height: 30px;
+  }
+  .reference-header .brand > span {
+    font-size: 20px;
+  }
+  .reference-header .brand small {
+    font-size: 6px;
+  }
+  .reference-header .mobile-menu-trigger {
+    width: 18px;
+  }
+  .reference-header .mobile-menu-trigger > svg {
+    width: 19px;
+  }
+  .reference-header .delivery-address {
+    gap: 3px;
+  }
+  .reference-header .delivery-address > svg:first-child {
+    width: 15px;
+  }
+  .reference-header .delivery-address b {
+    font-size: 9px;
+  }
+  .reference-header .delivery-address span {
+    font-size: 6px;
+  }
+  .reference-header .cart-link > svg {
+    width: 21px;
+    height: 21px;
+  }
+  .header-profile {
+    width: 23px;
+    height: 23px;
+  }
+  .header-profile > svg {
+    width: 15px;
+  }
+  .delivery-app > .customer-main {
+    padding: 0 14px 26px;
+  }
+  .pizza-hero {
+    height: 340px;
+    min-height: 340px;
+    border-radius: 14px;
+  }
+  .pizza-hero-copy {
+    padding: 24px 20px;
+  }
+  .pizza-hero-kicker {
+    font-size: 7px;
+    letter-spacing: 1.45px;
+    gap: 10px;
+  }
+  .pizza-hero-kicker i {
+    width: 58px;
+  }
+  .pizza-hero h1 {
+    font-size: clamp(31px, 9.4vw, 39px);
+    letter-spacing: -1.2px;
+    line-height: 1.03;
+    margin: 13px 0 10px;
+  }
+  .pizza-hero p {
+    font-size: 12px;
+    max-width: 245px;
+    line-height: 1.45;
+  }
+  .pizza-hero-cta {
+    font-size: 11px;
+    min-height: 37px;
+    padding: 9px 17px;
+    gap: 17px;
+    margin-top: 15px;
+  }
+  .pizza-hero-photo {
+    width: 190%;
+    left: -75%;
+    top: 65px;
+    height: calc(100% - 65px);
+  }
+  .pizza-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      #a00003 0%,
+      #ae0003f5 17%,
+      #a00003cc 40%,
+      #9a000020 72%,
+      transparent 100%
+    );
+  }
+  .food-categories {
+    margin-right: -14px;
+    padding: 13px 0 18px;
+    gap: 7px;
+  }
+  .food-categories button {
+    flex-basis: 69px;
+    min-width: 69px;
+    min-height: 76px;
+    border-radius: 21px;
+    padding: 9px 4px;
+  }
+  .food-categories button:first-child {
+    flex-basis: 64px;
+    min-width: 64px;
+  }
+  .food-categories button:first-child > svg {
+    width: 25px;
+    height: 25px;
+  }
+  .food-categories button:first-child b {
+    font-size: 9px;
+  }
+  .food-categories b {
+    font-size: 9px;
+  }
+  .food-category-emoji {
+    font-size: 27px;
+  }
+  .home-restaurants-heading h2 {
+    font-size: 19px;
+  }
+  .home-restaurants-heading > a {
+    font-size: 10px;
+  }
+  .home-restaurant-grid {
+    margin-right: -14px;
+    padding-right: 14px;
+    gap: 12px;
+  }
+  .home-restaurant-grid > .restaurant-card {
+    flex-basis: 86%;
+  }
+  .reference-restaurant-card .restaurant-cover {
+    height: 116px;
+  }
+  .reference-restaurant-card .restaurant-info h3 {
+    font-size: 13px;
+  }
+  .restaurant-monogram {
+    width: 59px;
+    height: 59px;
+    border-radius: 12px;
+  }
+  .restaurant-monogram > b {
+    font-size: 8px;
+    max-width: 49px;
+  }
+  .restaurant-monogram > svg {
+    width: 21px;
+    height: 21px;
+  }
+  .restaurant-monogram > small {
+    font-size: 4px;
+  }
+  .restaurant-identity {
+    min-height: 58px;
+    gap: 9px;
+  }
+  .reference-restaurant-card .restaurant-info {
+    padding: 0 10px 11px;
+  }
+  .restaurant-tags > span {
+    font-size: 8px;
+    padding: 4px 6px;
+  }
+  .delivery-detail {
+    font-size: 8px;
+    gap: 3px;
+  }
+  .restaurant-card-details {
+    gap: 5px;
+  }
+  .bottom-nav {
+    inset: auto 12px 13px;
+    padding: 8px;
+    min-height: 68px;
+    border-radius: 31px;
+  }
+  .bottom-nav a {
+    min-height: 49px;
+    font-size: 8px;
+  }
+  .bottom-nav a > svg {
+    width: 20px;
+    height: 20px;
+  }
+  .delivery-app > .footer {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+  .preview-mode .bottom-nav {
+    bottom: 13px;
+  }
+}
+@media (max-width: 359px) {
+  .reference-header .header-inner {
+    gap: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .reference-header .brand > span {
+    font-size: 18px;
+  }
+  .reference-header .brand img {
+    width: 26px;
+    height: 27px;
+  }
+  .reference-header .delivery-address > svg:last-child {
+    display: none;
+  }
+  .reference-header .brand small {
+    font-size: 5.5px;
+  }
+  .pizza-hero h1 {
+    font-size: 30px;
+  }
+  .pizza-hero-copy {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+  .pizza-hero-kicker {
+    font-size: 6px;
+  }
+  .restaurant-card-details {
+    flex-wrap: wrap;
+  }
+  .restaurant-identity {
+    min-height: 60px;
+  }
+}
+@media (min-width: 801px) {
+  .delivery-app > .bottom-nav {
+    display: none !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pizza-hero-cta,
+  .food-categories button,
+  .bottom-nav a {
+    transition: none;
+  }
+}
+.reference-header .mobile-menu-trigger {
+  padding: 0;
+}
+/* Compact, text-based restaurant discovery controls. */
+.restaurant-filterbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  border-bottom: 1px solid #e9e2d8;
+  margin: 20px 0 25px;
+  min-width: 0;
+}
+.restaurant-category-tabs {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  min-width: 0;
+  flex: 1;
+}
+.restaurant-category-tabs::-webkit-scrollbar {
+  display: none;
+}
+.restaurant-category-tabs button {
+  position: relative;
+  flex-shrink: 0;
+  background: transparent;
+  border: 0;
+  padding: 18px 14px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #7d7d7a;
+  transition: color 0.15s;
+}
+.restaurant-category-tabs button:first-child {
+  padding-left: 2px;
+  margin-right: 9px;
+}
+.restaurant-category-tabs button:hover {
+  color: #142d4b;
+}
+.restaurant-category-tabs button.selected {
+  color: #0754ff;
+  font-weight: 650;
+}
+.restaurant-category-tabs button.selected:after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 0;
+  height: 2px;
+  background: #0754ff;
+  border-radius: 2px;
+}
+.restaurant-category-tabs button:first-child.selected:after {
+  left: 2px;
+}
+.restaurant-filter-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding-bottom: 9px;
+}
+.delivery-filter,
+.restaurant-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fffdf9;
+  border: 1px solid #e7e2da;
+  border-radius: 10px;
+  min-height: 38px;
+  color: #59616c;
+  font-size: 11px;
+}
+.delivery-filter {
+  padding: 9px 12px;
+  white-space: nowrap;
+}
+.delivery-filter.selected {
+  border-color: #b7caff;
+  background: #edf2ff;
+  color: #0754ff;
+}
+.restaurant-sort {
+  position: relative;
+  padding-right: 12px;
+  gap: 0;
+}
+.restaurant-sort select {
+  border: 0;
+  outline: 0;
+  background: none;
+  appearance: none;
+  padding: 10px 28px 10px 12px;
+  font-size: 11px;
+  color: #59616c;
+  cursor: pointer;
+  max-width: 175px;
+}
+.restaurant-sort > svg {
+  pointer-events: none;
+  position: absolute;
+  right: 11px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.home-restaurants-heading {
+  margin-bottom: 17px;
+}
+@media (min-width: 1650px) {
+  .restaurant-filterbar {
+    margin-top: 24px;
+    margin-bottom: 28px;
+  }
+  .restaurant-category-tabs button {
+    font-size: 14px;
+    padding: 21px 20px 23px;
+  }
+  .restaurant-category-tabs button:first-child {
+    padding-left: 2px;
+  }
+  .restaurant-filter-options {
+    gap: 12px;
+  }
+  .delivery-filter,
+  .restaurant-sort select {
+    font-size: 12px;
+    min-height: 42px;
+  }
+}
+@media (max-width: 1100px) {
+  .restaurant-filterbar {
+    gap: 14px;
+  }
+  .restaurant-category-tabs {
+    gap: 0;
+  }
+  .restaurant-category-tabs button {
+    font-size: 11px;
+    padding: 17px 10px 19px;
+  }
+  .restaurant-filter-options {
+    gap: 7px;
+  }
+  .delivery-filter {
+    padding: 9px 10px;
+  }
+  .delivery-filter,
+  .restaurant-sort select {
+    font-size: 10px;
+  }
+  .restaurant-sort select {
+    max-width: 145px;
+  }
+}
+@media (max-width: 800px) {
+  .restaurant-filterbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin: 11px 0 22px;
+    border-bottom: 0;
+  }
+  .restaurant-category-tabs {
+    border-bottom: 1px solid #e9e2d8;
+    gap: 5px;
+    flex: none;
+  }
+  .restaurant-category-tabs button {
+    font-size: 12px;
+    padding: 15px 12px 16px;
+  }
+  .restaurant-category-tabs button:first-child {
+    padding-left: 1px;
+    margin-right: 4px;
+  }
+  .restaurant-filter-options {
+    padding-bottom: 0;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .delivery-filter,
+  .restaurant-sort {
+    border-radius: 10px;
+    min-height: 37px;
+  }
+  .delivery-filter {
+    font-size: 11px;
+    padding: 9px 12px;
+  }
+  .restaurant-sort select {
+    font-size: 11px;
+    max-width: none;
+    min-width: 143px;
+  }
+  .home-restaurants-heading {
+    margin-bottom: 14px;
+  }
+}
+@media (max-width: 430px) {
+  .restaurant-filterbar {
+    margin: 9px 0 21px;
+    gap: 12px;
+  }
+  .restaurant-category-tabs button {
+    font-size: 11px;
+    padding: 14px 11px 16px;
+  }
+  .restaurant-category-tabs button:first-child {
+    padding-left: 1px;
+  }
+  .delivery-filter {
+    font-size: 10px;
+    padding: 8px 11px;
+  }
+  .delivery-filter > svg {
+    width: 15px;
+  }
+  .restaurant-sort select {
+    font-size: 10px;
+    min-width: 135px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+  .delivery-filter,
+  .restaurant-sort {
+    min-height: 35px;
+  }
+  .home-restaurants-heading {
+    margin-bottom: 13px;
+  }
+}
+.food-discovery {
+  margin: 42px 0 14px;
+  padding-top: 33px;
+  border-top: 1px solid #e9e2d8;
+}
+.food-discovery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 24px;
+}
+.food-discovery-header h2 {
+  font-size: 26px;
+  margin: 8px 0;
+}
+.food-discovery-header p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 620px;
+}
+.food-api-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e4dfd5;
+  border-radius: 12px;
+  background: #fffdf9;
+  min-height: 46px;
+  padding: 6px 7px 6px 14px;
+  width: 330px;
+  flex-shrink: 0;
+  color: #7083a0;
+}
+.food-api-search input {
+  background: none;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  min-width: 0;
+  font-size: 12px;
+  color: #34445e;
+}
+.food-api-search button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--blue);
+  color: white;
+  flex-shrink: 0;
+}
+.food-api-results {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #8b8070;
+  margin-bottom: 16px;
+  gap: 10px;
+}
+.food-api-results small {
+  font-size: 10px;
+}
+.food-api-results a {
+  color: #4a70a7;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.food-api-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.food-api-card {
+  background: #fffdf9;
+  border: 1px solid #ece5d9;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.food-api-image {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: #eee5d6;
+  width: 100%;
+  display: block;
+  height: 185px;
+  overflow: hidden;
+}
+.food-api-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s;
+}
+.food-api-image:hover img {
+  transform: scale(1.04);
+}
+.food-api-image > span {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: #fffdf0ed;
+  color: #72654f;
+  font-size: 9px;
+}
+.food-api-card-body {
+  padding: 17px;
+}
+.food-api-card-body h3 {
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+}
+.food-api-card-body p {
+  font-size: 11px;
+  color: #978d7d;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.7;
+  margin-top: 8px;
+  min-height: 37px;
+}
+.food-detail-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--blue);
+  border: 0;
+  background: none;
+  padding: 0;
+  margin-top: 17px;
+}
+.food-api-footnote {
+  font-size: 10px;
+  color: #9e9587;
+  margin-top: 18px;
+  line-height: 1.7;
+}
+.food-detail-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 11px;
+  margin-bottom: 18px;
+}
+.food-detail-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.food-detail-tags > span {
+  padding: 5px 9px;
+  background: #f2e9d9;
+  border-radius: 6px;
+  font-size: 10px;
+  color: #917a53;
+}
+.food-ingredients {
+  columns: 2;
+  padding-left: 19px;
+  margin: 20px 0;
+  color: #8b8170;
+  font-size: 12px;
+  line-height: 2;
+}
+.food-import-note {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.food-import-message {
+  padding: 15px 18px;
+  background: #e9f1e2;
+  border: 1px solid #d5e4c7;
+  color: #587741;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.menu-header-actions {
+  display: flex;
+  gap: 10px;
+}
+.admin-main > .food-discovery {
+  border: 0;
+  padding-top: 0;
+  margin-top: 15px;
+}
+.food-discovery .empty {
+  padding: 45px 20px;
+}
+.food-api-card .btn {
+  font-size: 11px;
+}
+.food-discovery .modal-body > h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+}
+.food-discovery .modal-body > .text-link {
+  margin-top: 15px;
+}
+@media (max-width: 1000px) {
+  .food-api-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .food-discovery-header {
+    align-items: flex-start;
+  }
+  .food-api-search {
+    width: 285px;
+  }
+  .food-api-image {
+    height: 160px;
+  }
+}
+@media (max-width: 800px) {
+  .food-discovery {
+    margin-top: 30px;
+    padding-top: 25px;
+  }
+  .food-discovery-header {
+    flex-direction: column;
+    gap: 17px;
+  }
+  .food-api-search {
+    width: 100%;
+  }
+  .food-discovery-header h2 {
+    font-size: 23px;
+  }
+  .food-discovery-header p {
+    font-size: 11px;
+  }
+  .food-api-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .food-api-image {
+    height: 160px;
+  }
+  .food-api-card-body {
+    padding: 14px;
+  }
+  .food-api-card-body h3 {
+    font-size: 14px;
+  }
+  .food-api-card-body p {
+    font-size: 10px;
+  }
+  .food-api-footnote {
+    font-size: 9px;
+  }
+  .menu-header-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .menu-header-actions .btn {
+    min-height: 35px;
+  }
+}
+@media (max-width: 430px) {
+  .food-api-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .food-api-image {
+    height: 205px;
+  }
+  .food-api-card-body {
+    padding: 17px;
+  }
+  .food-api-card-body h3 {
+    font-size: 17px;
+  }
+  .food-api-card-body p {
+    font-size: 11px;
+    min-height: 0;
+  }
+  .food-api-results {
+    font-size: 10px;
+  }
+  .food-api-results small {
+    font-size: 9px;
+  }
+  .food-discovery-header h2 {
+    font-size: 22px;
+  }
+  .food-ingredients {
+    columns: 1;
+  }
+  .food-detail-image {
+    height: 200px;
+  }
+  .menu-header-actions {
+    gap: 7px;
+  }
+  .menu-header-actions > .btn {
+    font-size: 10px;
+    padding: 8px 11px;
+  }
+  .menu-header-actions > .btn > svg {
+    width: 13px;
+  }
+}

@@ -1,0 +1,2 @@
+-- TheMealDB recipe 53014. Demonstrative price defined by this project, not provided by the API.
+INSERT INTO products(id,restaurant_id,name,description,price,image,category,active) VALUES('mealdb-53014','bella-massa','Pizza Express Margherita','Ingredientes: Water, Sugar, Yeast, Plain Flour, Salt, Olive Oil, Passata, Mozzarella, Oregano, Basil, Black Pepper',54.90,'https://www.themealdb.com/images/media/meals/x0lk931587671540.jpg','Pizzas',true) ON CONFLICT(id) DO NOTHING;

@@ -1,0 +1,402 @@
+/* Warm surfaces sampled from the pizza hero: tomato, baked crust and basil.
+   --blue is the existing action token; the logo keeps its original brand blue. */
+:root {
+  --cream: #f3dfc5;
+  --paper: #fff3df;
+  --ink: #38251f;
+  --muted: #75604e;
+  --line: #dfc7a8;
+  --green: #365b38;
+  --orange: #bb451f;
+  --blue: #a42e20;
+  --tomato: #a42e20;
+  --tomato-dark: #7c2118;
+  --basil: #304d39;
+  --crust: #f1c77e;
+}
+body,
+.delivery-app {
+  background: #f3dfc5;
+}
+.delivery-app {
+  background:
+    radial-gradient(ellipse at 100% 22%, #ebc99980, transparent 60%), #f3dfc5;
+}
+.brand b {
+  color: #0754ff;
+}
+.reference-header {
+  background: #f9e9d2f5;
+  border-bottom: 1px solid #d9b68e;
+  box-shadow: 0 3px 20px #69421b08;
+}
+.reference-header .delivery-address,
+.reference-header .reference-search {
+  background: #fff3df;
+  border-color: #dcbf98;
+  color: var(--tomato);
+  box-shadow: none;
+}
+.reference-header .delivery-address > svg:first-child {
+  color: var(--tomato);
+}
+.reference-header .delivery-address span,
+.reference-header .reference-search input::placeholder {
+  color: #7f6650;
+}
+.reference-header .delivery-address b,
+.reference-header .reference-search input {
+  color: #443226;
+}
+.desktop-navigation {
+  color: #6c4835;
+}
+.reference-header .cart-link {
+  color: var(--tomato);
+}
+.reference-header .cart-link span {
+  background: var(--tomato);
+}
+.header-profile {
+  background: #e9c6a1;
+  color: #692c20;
+}
+.reference-header .site-menu-trigger {
+  background: #edd0a9;
+  border-color: #d7b38b;
+  color: #6c2c20;
+}
+.pizza-hero {
+  border: 1px solid #91291c;
+  box-shadow: 0 14px 30px #863b1817;
+}
+.pizza-hero-cta {
+  background: #ffdf9d;
+  color: #54271b;
+  border-color: #ffdf9d;
+}
+.pizza-hero-cta:hover {
+  background: #ffd281;
+}
+.restaurant-filterbar {
+  border-color: #d5b38c;
+}
+.restaurant-category-tabs button {
+  color: #73513b;
+}
+.restaurant-category-tabs button.selected,
+.restaurant-category-tabs button:hover {
+  color: var(--tomato-dark);
+}
+.restaurant-category-tabs button.selected:after {
+  background: var(--tomato);
+  height: 3px;
+}
+.delivery-filter,
+.restaurant-sort {
+  background: #f9e9cf;
+  color: #654c37;
+  border-color: #d7b58c;
+}
+.restaurant-sort select {
+  color: #654c37;
+}
+.delivery-filter.selected {
+  background: #e2ead6;
+  color: #304d39;
+  border-color: #789064;
+}
+.home-restaurants-heading h2,
+.reference-restaurant-card .restaurant-info h3 {
+  color: #462b21;
+}
+.home-restaurants-heading {
+  border-left: 4px solid #b84025;
+  padding-left: 13px;
+}
+.reference-restaurant-card,
+.reference-restaurant-card .restaurant-info {
+  background: #fff0d8;
+}
+.reference-restaurant-card {
+  border: 1px solid #d9b893;
+  box-shadow: 0 5px 16px #83501d0a;
+}
+.reference-restaurant-card:hover {
+  border-color: #b57f4b;
+  box-shadow: 0 12px 28px #83501d19;
+}
+.reference-restaurant-card .restaurant-monogram {
+  border-color: #fff0d8;
+}
+.restaurant-tags > span {
+  background: #e4e8cf;
+  color: #405b32;
+}
+.restaurant-card-details,
+.reference-restaurant-card .rating {
+  color: #78503a;
+}
+.reference-restaurant-card .rating > svg {
+  color: #a96809;
+}
+.food-discovery {
+  padding: 30px;
+  border: 1px solid #3d5940;
+  border-radius: 24px;
+  background: #304d39;
+  color: #fff1d6;
+  box-shadow: 0 10px 26px #304d3910;
+}
+.food-discovery-header h2 {
+  color: #fff1d6;
+}
+.food-discovery-header .eyebrow {
+  color: #efc987;
+}
+.food-discovery-header p,
+.food-api-results,
+.food-api-footnote {
+  color: #e0dfc5;
+}
+.food-api-results a {
+  color: #ffe0a0;
+}
+.food-api-search {
+  background: #fff0d8;
+  border-color: #d3bd95;
+  color: #6d4c33;
+}
+.food-api-search input {
+  color: #3c3124;
+}
+.food-api-search button {
+  background: var(--tomato);
+  color: #fff8ea;
+}
+.food-api-card {
+  background: #fff0d8;
+  color: var(--ink);
+  border-color: #d7c29f;
+}
+.food-api-card-body h3 {
+  color: #422a20;
+}
+.food-api-card-body p {
+  color: #715e4a;
+}
+.food-detail-button {
+  color: #922b1d;
+}
+.food-discovery > .empty {
+  background: #f3e4c9;
+  color: #493322;
+  border-radius: 15px;
+  padding: 24px;
+}
+.food-discovery > .empty h3 {
+  color: #583020;
+}
+.food-discovery > .empty p {
+  color: #71533c;
+}
+.food-discovery .modal-body {
+  color: var(--ink);
+}
+.delivery-surface > .footer {
+  background: #64271f;
+  border: 1px solid #64271f;
+  border-radius: 22px 22px 0 0;
+  padding: 26px;
+  color: #f9e4c3;
+  margin-bottom: 0;
+}
+.delivery-surface > .footer .brand > span {
+  color: #fff0d4;
+}
+.delivery-surface > .footer .brand b {
+  color: #f1c77e;
+}
+.delivery-surface > .footer nav,
+.delivery-surface > .footer > small {
+  color: #f2d4ae;
+}
+.site-navigation-drawer {
+  background: #6b2a20;
+  border-color: #843d2b;
+  color: #fff0d5;
+  box-shadow: 0 15px 40px #59261927;
+}
+.site-menu-header .brand > span {
+  color: #fff1d8;
+}
+.site-menu-header .brand b {
+  color: #f1c77e;
+}
+.site-menu-header .brand small {
+  color: #eed4ad;
+}
+.site-menu-close {
+  background: #8b4432;
+  color: #fff0d4;
+  border-color: #a36045;
+}
+.site-menu-close:hover {
+  background: #a3533b;
+}
+.site-menu-item {
+  background: #7c3729;
+  color: #ffeacb;
+}
+.site-menu-item:hover {
+  background: #914b35;
+  color: #fff5e5;
+}
+.site-menu-item.active {
+  background: #f1c77e;
+  color: #55271b;
+  box-shadow: 0 3px 12px #30160e16;
+}
+.site-menu-divider {
+  background: #a26a4b;
+}
+.site-menu-restaurant {
+  background: #f1d9b5;
+  border-color: #f1d9b5;
+  color: #542c1e;
+}
+.site-menu-restaurant h3 {
+  color: #542c1e;
+}
+.site-menu-restaurant p {
+  color: #78563b;
+}
+.site-menu-store-icon {
+  background: #e6ba87;
+  color: #933821;
+}
+.site-menu-restaurant > a {
+  background: #fff0d7;
+  color: #6f3022;
+  border-color: #d7b48a;
+}
+.site-menu-all-screens {
+  color: #edcc9e;
+}
+.panel,
+.product-card,
+.order-card,
+.help-question,
+.coupon-offer {
+  background: #fff0da;
+  border-color: #d9bc97;
+}
+.panel h3,
+.product-card h3,
+.help-question summary {
+  color: #4d3022;
+}
+.coupon-offer {
+  background: #f6d59b;
+  border-color: #d5ad67;
+}
+.coupon-offer-icon,
+.coupon-offer-code {
+  background: #fce8c3;
+  color: #93321f;
+  border-color: #bc884d;
+}
+.coupon-offer-code > b,
+.coupon-offer-code button {
+  color: #7d2b1d;
+}
+.help-question p {
+  color: #71513c;
+}
+.btn:hover {
+  background: #7c2118;
+}
+.btn.secondary {
+  color: #8a2b1d;
+  border-color: #c8906b;
+  background: #f7e3c8;
+}
+.btn.secondary:hover {
+  background: #efd1ab;
+}
+.btn-white {
+  background: #ffdfa4;
+  color: #542b1c;
+}
+.tabs button.active {
+  background: #f0cba0;
+  color: #7c2c1d;
+}
+input,
+textarea,
+select {
+  accent-color: #a42e20;
+}
+button:focus-visible,
+a:focus-visible {
+  outline-color: #be7937;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline-color: #b76e38;
+}
+.admin-shell {
+  background: #f3dfc5;
+}
+.admin-sidebar {
+  background: #4c261e;
+}
+.admin-sidebar nav a {
+  color: #e1c3a3;
+}
+.admin-sidebar nav a.active {
+  background: #a63d29;
+}
+.admin-sidebar nav a:hover {
+  background: #6d3527;
+}
+.admin-header {
+  background: #f7e8d0;
+}
+.stat-card {
+  background: #faebd3;
+  border-color: #d8b990;
+}
+.stat-icon {
+  background: #f0d0ac;
+  color: #9b3821;
+}
+.auth-content {
+  background: #f3dfc5;
+}
+.preview-notice {
+  background: #54261f;
+  color: #f7e3c6;
+}
+@media (max-width: 800px) {
+  .food-discovery {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+  .delivery-surface > .footer {
+    padding: 24px 18px 120px;
+  }
+  .delivery-app .bottom-nav {
+    background: #fff0d9f5;
+    border-color: #d1ac7d;
+    box-shadow: 0 6px 30px #64391930;
+  }
+  .delivery-app .bottom-nav a {
+    color: #75513a;
+  }
+  .delivery-app .bottom-nav a.active {
+    background: #a42e20;
+    color: #fff2dc;
+  }
+}
